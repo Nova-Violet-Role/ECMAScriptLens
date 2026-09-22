@@ -10,5 +10,4 @@ This project is jointly licensed under:
 `SPDX-License-Identifier: AGPL-3.0-or-later OR EUPL-1.2`
 
 Every source file carries the SPDX header above. The full license texts
-ship with every release artifact; until then the linked canonical texts
-apply.
+ship in `LICENSES/` (`AGPL-3.0-or-later.txt`, `EUPL-1.2.txt`).
