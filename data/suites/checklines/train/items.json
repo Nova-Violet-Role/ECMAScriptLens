@@ -1,0 +1,157 @@
+[
+ {
+  "id": "ecma-check-00",
+  "prompt": "Read the following `rdc check` output and state its verdict. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <code>`.\n\nCheck output:\n{\"ok\":true,\"errors\":0,\"findings\":[],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":1,\"ndata\":0,\"laws\":1}}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-checklines",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: ok",
+    "min_tier": 1
+   },
+   {
+    "kind": "not_contains",
+    "value": "VERDICT: FAIL",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "probe_root",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "ok"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-check-05",
+  "prompt": "Read the following `rdc check` output and state its verdict. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <code>`.\n\nCheck output:\n{\"ok\":false,\"errors\":1,\"findings\":[{\"level\":\"error\",\"code\":\"C5\",\"msg\":\"element probe_a is declared but never named in the body (name it as <probe_a> or `probe_a`)\"}],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":1,\"ndata\":0,\"laws\":1}}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-checklines",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: FAIL C5",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "C5",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "probe_a",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "C5"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-check-10",
+  "prompt": "Read the following `rdc check` output and state its verdict. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <code>`.\n\nCheck output:\n{\"ok\":false,\"errors\":1,\"findings\":[{\"level\":\"error\",\"code\":\"C10\",\"msg\":\"LAW.* entities are declared but the body never invokes them\"}],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":1,\"ndata\":0,\"laws\":1}}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-checklines",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: FAIL C10",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "C10",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "LAW.PROBE.1",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "C10"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-check-02",
+  "prompt": "Read the following `rdc check` output and state its verdict. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <code>`.\n\nCheck output:\n{\"ok\":false,\"errors\":1,\"findings\":[{\"level\":\"error\",\"code\":\"C2\",\"msg\":\"unknown declaration <!FOO\"}],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":1,\"ndata\":0,\"laws\":1}}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-checklines",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: FAIL C2",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "C2",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "FOO",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "C2"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-check-16",
+  "prompt": "Read the following `rdc check` output and state its verdict. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <code>`.\n\nCheck output:\n{\"ok\":false,\"errors\":1,\"findings\":[{\"level\":\"error\",\"code\":\"C16\",\"msg\":\"entity DUP.1 is redeclared after the subset that already declares it; XML binds the first and this text governs nothing\"}],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":2,\"ndata\":0,\"laws\":1}}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-checklines",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: FAIL C16",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "C16",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "DUP.1",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "C16"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

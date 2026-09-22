@@ -1,0 +1,2 @@
+<!ELEMENT epsilon (#PCDATA)>
+<!ENTITY % epart "EPART-VALUE">

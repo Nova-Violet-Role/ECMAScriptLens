@@ -1,0 +1,2 @@
+<!ELEMENT beta (#PCDATA)>
+<!ENTITY B.1 "beta one uses %shared;">

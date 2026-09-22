@@ -1,0 +1,54 @@
+[
+ {
+  "id": "ecma-v3-sec10",
+  "prompt": "Which exhibit reports FAIL C10? First line must be exactly `VERDICT: <letters>`.\n\nExhibit A:\n{\"ok\":true,\"errors\":0,\"findings\":[],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":1,\"ndata\":0,\"laws\":1}}\nExhibit B:\n{\"ok\":false,\"errors\":1,\"findings\":[{\"level\":\"error\",\"code\":\"C5\",\"msg\":\"element probe_a is declared but never named in the body (name it as <probe_a> or `probe_a`)\"}],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":1,\"ndata\":0,\"laws\":1}}\nExhibit C:\n{\"ok\":false,\"errors\":1,\"findings\":[{\"level\":\"error\",\"code\":\"C10\",\"msg\":\"LAW.* entities are declared but the body never invokes them\"}],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":1,\"ndata\":0,\"laws\":1}}\nExhibit D:\n{\"ok\":false,\"errors\":1,\"findings\":[{\"level\":\"error\",\"code\":\"C2\",\"msg\":\"unknown declaration <!FOO\"}],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":1,\"ndata\":0,\"laws\":1}}\nExhibit E:\n{\"ok\":false,\"errors\":1,\"findings\":[{\"level\":\"error\",\"code\":\"C16\",\"msg\":\"entity DUP.1 is redeclared after the subset that already declares it; XML binds the first and this text governs nothing\"}],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":2,\"ndata\":0,\"laws\":1}}\nExhibit F:\n{\"ok\":true,\"errors\":0,\"findings\":[],\"stats\":{\"name\":\"probe_forge\",\"elements\":12,\"entities\":9,\"ndata\":4,\"laws\":9}}\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-rev3",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: C",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "C10",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "C"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-v3-chcount",
+  "prompt": "State this file's doctype name and its ELEMENT count. First line must be exactly `VERDICT: <name> <n>`.\n\n---\nname: probe-ok\ndescription: \"Minimal valid probe.\"\n---\n\n<!DOCTYPE probe_root [\n<!ELEMENT probe_root (probe_a)>\n<!ELEMENT probe_a (#PCDATA)>\n<!ENTITY LAW.PROBE.1 \"First probe law holds.\">\n]>\n\nBody names <probe_root> and renders `probe_a` per LAW.PROBE.1.\n\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-rev3",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: probe_root 2",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "probe_root",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "probe_root"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

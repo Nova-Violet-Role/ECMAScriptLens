@@ -1,0 +1,64 @@
+[
+ {
+  "id": "ecma-check-04",
+  "prompt": "Read the following `rdc check` output and state its verdict. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <code>`.\n\nCheck output:\n{\"ok\":false,\"errors\":1,\"findings\":[{\"level\":\"error\",\"code\":\"C4\",\"msg\":\"element probe_root references undeclared probe_missing\"}],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":1,\"ndata\":0,\"laws\":1}}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-checklines",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: FAIL C4",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "C4",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "probe_missing",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "C4"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-check-00",
+  "prompt": "Read the following `rdc check` output and state its verdict. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <code>`.\n\nCheck output:\n{\"ok\":true,\"errors\":0,\"findings\":[],\"stats\":{\"name\":\"probe_forge\",\"elements\":12,\"entities\":9,\"ndata\":4,\"laws\":9}}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-checklines",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: ok",
+    "min_tier": 1
+   },
+   {
+    "kind": "not_contains",
+    "value": "VERDICT: FAIL",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "probe_forge",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "ok"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

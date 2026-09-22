@@ -1,0 +1,142 @@
+[
+ {
+  "id": "ecma-trace-00",
+  "prompt": "Trace `resolveFile` on the following src file with its parts: state the include order and the key values present in the resolved output. Your first line must be exactly `ORDER: <o>` with the comma-joined order.\n\n--- src: R00_valid_a.md ---\n<!DOCTYPE probe_r [\n<!ENTITY % a SYSTEM \"parts/a.dtd\">\n%a;\n]>\n\n--- parts/a.dtd ---\n<!ELEMENT alpha (#PCDATA)>\n<!ENTITY A.1 \"alpha one\">\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-resolvetrace",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "ORDER: a",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "alpha",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "ORDER",
+     "a"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-trace-03",
+  "prompt": "Trace `resolveFile` on the following src file with its parts: state the include order and the key values present in the resolved output. Your first line must be exactly `ORDER: <o>` with the comma-joined order.\n\n--- src: R03_nested.md ---\n<!DOCTYPE probe_r [\n<!ENTITY % b SYSTEM \"parts/b.dtd\">\n<!ENTITY % c SYSTEM \"parts/c.dtd\">\n%b;\n%c;\n]>\n\n--- parts/b.dtd ---\n<!ELEMENT beta (#PCDATA)>\n<!ENTITY B.1 \"beta one uses %shared;\">\n\n--- parts/c.dtd ---\n<!ELEMENT gamma (#PCDATA)>\n<!ENTITY % shared \"shared-value\">\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-resolvetrace",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "ORDER: b,c",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "shared-value",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "beta",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "ORDER",
+     "b,c"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-trace-04",
+  "prompt": "Trace `resolveFile` on the following src file with its parts: state the include order and the key values present in the resolved output. Your first line must be exactly `ORDER: <o>` with the comma-joined order.\n\n--- src: R04_valid_c.md ---\n<!DOCTYPE probe_r [\n<!ENTITY % c SYSTEM \"parts/c.dtd\">\n%c;\n]>\n\n--- parts/c.dtd ---\n<!ELEMENT gamma (#PCDATA)>\n<!ENTITY % shared \"shared-value\">\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-resolvetrace",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "ORDER: c",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "gamma",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "ORDER",
+     "c"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-trace-05",
+  "prompt": "Trace `resolveFile` on the following src file with its parts: state the include order and the key values present in the resolved output. Your first line must be exactly `ORDER: <o>` with the comma-joined order.\n\n--- src: R05_cond.md ---\n<!DOCTYPE probe_r [\n<!ENTITY % cond SYSTEM \"parts/cond.dtd\">\n%cond;\n]>\n\n--- parts/cond.dtd ---\n<![ INCLUDE [\n<!ELEMENT inc_el (#PCDATA)>\n]]>\n<![ IGNORE [\n<!ELEMENT ign_el (#PCDATA)>\n]]>\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-resolvetrace",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "ORDER: cond",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "inc_el",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "ORDER",
+     "cond"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-trace-06",
+  "prompt": "Trace `resolveFile` on the following src file with its parts: state the include order and the key values present in the resolved output. Your first line must be exactly `ORDER: <o>` with the comma-joined order.\n\n--- src: R06_deep.md ---\n<!DOCTYPE probe_r [\n<!ENTITY % d SYSTEM \"parts/d.dtd\">\n<!ENTITY % e SYSTEM \"parts/e.dtd\">\n%d;\n%e;\n]>\n\n--- parts/d.dtd ---\n<!ELEMENT delta (#PCDATA)>\n<!-- delta renders %epart; here -->\n\n--- parts/e.dtd ---\n<!ELEMENT epsilon (#PCDATA)>\n<!ENTITY % epart \"EPART-VALUE\">\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-resolvetrace",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "ORDER: d,e",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "EPART-VALUE",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "delta",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "ORDER",
+     "d,e"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

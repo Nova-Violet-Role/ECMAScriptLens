@@ -1,0 +1,59 @@
+[
+ {
+  "id": "ecma-trace-08",
+  "prompt": "Trace `resolveFile` on the following src file with its parts: state the include order and the key values present in the resolved output. Your first line must be exactly `ORDER: <o>` with the comma-joined order.\n\n--- src: R08_ghost_ignore.md ---\n<!DOCTYPE probe_r [\n<!ENTITY % cg SYSTEM \"parts/condghost.dtd\">\n%cg;\n]>\n\n--- parts/condghost.dtd ---\n<![ IGNORE [\n<!ELEMENT ghost_el (#PCDATA)>\n<!ENTITY G.1 \"uses %ghost_undefined;\">\n]]>\n<!ELEMENT kept_el (#PCDATA)>\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-resolvetrace",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "ORDER: cg",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "kept_el",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "ORDER",
+     "cg"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-trace-09",
+  "prompt": "Trace `resolveFile` on the following src file with its parts: state the include order and the key values present in the resolved output. Your first line must be exactly `ORDER: <o>` with the comma-joined order.\n\n--- src: R09_single_e.md ---\n<!DOCTYPE probe_r [\n<!ENTITY % e SYSTEM \"parts/e.dtd\">\n%e;\n]>\n\n--- parts/e.dtd ---\n<!ELEMENT epsilon (#PCDATA)>\n<!ENTITY % epart \"EPART-VALUE\">\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-resolvetrace",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "ORDER: e",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "EPART-VALUE",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "epsilon",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "ORDER",
+     "e"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

@@ -1,0 +1,2 @@
+<!ELEMENT alpha (#PCDATA)>
+<!ENTITY A.1 "alpha one">

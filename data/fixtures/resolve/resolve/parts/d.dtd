@@ -1,0 +1,2 @@
+<!ELEMENT delta (#PCDATA)>
+<!-- delta renders %epart; here -->

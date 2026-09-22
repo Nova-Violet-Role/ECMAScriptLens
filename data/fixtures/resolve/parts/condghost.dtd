@@ -1,0 +1,5 @@
+<![ IGNORE [
+<!ELEMENT ghost_el (#PCDATA)>
+<!ENTITY G.1 "uses %ghost_undefined;">
+]]>
+<!ELEMENT kept_el (#PCDATA)>

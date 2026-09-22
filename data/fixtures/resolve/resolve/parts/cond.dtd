@@ -1,0 +1,6 @@
+<![ INCLUDE [
+<!ELEMENT inc_el (#PCDATA)>
+]]>
+<![ IGNORE [
+<!ELEMENT ign_el (#PCDATA)>
+]]>

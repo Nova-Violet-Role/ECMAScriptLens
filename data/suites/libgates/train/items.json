@@ -1,0 +1,142 @@
+[
+ {
+  "id": "ecma-gate-S1",
+  "prompt": "Read the following `ai-slop.mjs --json` output and state its verdict. Your first line must be exactly `VERDICT: alive yes` or `VERDICT: alive no`. Then name every measure with holds=false, or write `none` when all hold.\n\nGate output:\n{\n \"alive\": false,\n \"measures\": [\n  {\n   \"name\": \"tells\",\n   \"holds\": false\n  },\n  {\n   \"name\": \"hedges\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"fillers\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"closers\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"static_share\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"rhythm_cv\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"lexical_mattr\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"rotation_overlap\",\n   \"holds\": true\n  }\n ]\n}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-libgates",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: alive no",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "tells",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "alive no"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-gate-S2",
+  "prompt": "Read the following `ai-slop.mjs --json` output and state its verdict. Your first line must be exactly `VERDICT: alive yes` or `VERDICT: alive no`. Then name every measure with holds=false, or write `none` when all hold.\n\nGate output:\n{\n \"alive\": false,\n \"measures\": [\n  {\n   \"name\": \"tells\",\n   \"holds\": false\n  },\n  {\n   \"name\": \"hedges\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"fillers\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"closers\",\n   \"holds\": false\n  },\n  {\n   \"name\": \"static_share\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"rhythm_cv\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"lexical_mattr\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"rotation_overlap\",\n   \"holds\": true\n  }\n ]\n}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-libgates",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: alive no",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "tells",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "closers",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "alive no"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-gate-S4",
+  "prompt": "Read the following `ai-slop.mjs --json` output and state its verdict. Your first line must be exactly `VERDICT: alive yes` or `VERDICT: alive no`. Then name every measure with holds=false, or write `none` when all hold.\n\nGate output:\n{\n \"alive\": false,\n \"measures\": [\n  {\n   \"name\": \"tells\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"hedges\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"fillers\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"closers\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"static_share\",\n   \"holds\": false\n  },\n  {\n   \"name\": \"rhythm_cv\",\n   \"holds\": false\n  },\n  {\n   \"name\": \"lexical_mattr\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"rotation_overlap\",\n   \"holds\": true\n  }\n ]\n}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-libgates",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: alive no",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "static_share",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "rhythm_cv",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "alive no"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-gate-S6",
+  "prompt": "Read the following `ai-slop.mjs --json` output and state its verdict. Your first line must be exactly `VERDICT: alive yes` or `VERDICT: alive no`. Then name every measure with holds=false, or write `none` when all hold.\n\nGate output:\n{\n \"alive\": false,\n \"measures\": [\n  {\n   \"name\": \"tells\",\n   \"holds\": false\n  },\n  {\n   \"name\": \"hedges\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"fillers\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"closers\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"static_share\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"rhythm_cv\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"lexical_mattr\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"rotation_overlap\",\n   \"holds\": true\n  }\n ]\n}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-libgates",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: alive no",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "tells",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "alive no"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-gate-C1",
+  "prompt": "Read the following `ai-slop.mjs --json` output and state its verdict. Your first line must be exactly `VERDICT: alive yes` or `VERDICT: alive no`. Then name every measure with holds=false, or write `none` when all hold.\n\nGate output:\n{\n \"alive\": true,\n \"measures\": [\n  {\n   \"name\": \"tells\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"hedges\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"fillers\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"closers\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"static_share\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"rhythm_cv\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"lexical_mattr\",\n   \"holds\": true\n  },\n  {\n   \"name\": \"rotation_overlap\",\n   \"holds\": true\n  }\n ]\n}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-libgates",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: alive yes",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "none",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "alive yes"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

@@ -1,0 +1,54 @@
+[
+ {
+  "id": "ecma-purefn-doctypename",
+  "prompt": "State the exact output of lib/dtd.mjs `splitDoctype` on the given input. Quote the output value exactly.\n\nFunction: splitDoctype\nInput: <!DOCTYPE probe_x [\n<!ELEMENT a (#PCDATA)>\n]>\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-purefn",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "probe_x",
+    "min_tier": 1
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "splitDoctype",
+     "probe_x"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-purefn-modelrefs",
+  "prompt": "State the exact output of lib/dtd.mjs `modelRefs` on the given input. Quote the output value exactly.\n\nFunction: modelRefs\nInput: (alpha, beta?, gamma*)\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-purefn",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "alpha",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "beta",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "gamma",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "modelRefs",
+     "alpha"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

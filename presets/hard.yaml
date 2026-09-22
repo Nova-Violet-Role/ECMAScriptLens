@@ -1,0 +1,19 @@
+# ECMAScriptLens preset: HARD — verdicts only.
+name: hard
+description: >
+  Verdict-level judgment over all ECMAScriptLens suites. The model states
+  exact outputs, verdicts and readings with no evidence demanded beyond
+  the value itself. Entry tier.
+tier: 1
+epochs: 4
+edit_budget: 4
+batch_size: 25
+gate: hard
+suites:
+  - purefn
+  - checklines
+  - forgeshape
+  - resolvetrace
+  - libgates
+  - real-v1
+  - real-v3

@@ -1,0 +1,107 @@
+[
+ {
+  "id": "ecma-purefn-normalize-basic",
+  "prompt": "State the exact output of lib/dtd.mjs `normalize` on the given input. Quote the output value exactly.\n\nFunction: normalize\nInput: a\r\nb\r\nc\n\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-purefn",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "a\nb\nc\n",
+    "min_tier": 1
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "normalize",
+     "a\nb\nc"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-purefn-normalize-bom",
+  "prompt": "State the exact output of lib/dtd.mjs `normalize` on the given input. Quote the output value exactly.\n\nFunction: normalize\nInput: ﻿hi\r\n\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-purefn",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "hi\n",
+    "min_tier": 1
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "normalize",
+     "hi"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-purefn-yaml-bare-colon",
+  "prompt": "State the exact output of lib/dtd.mjs `yamlScalar` on the given input. Quote the output value exactly.\n\nFunction: yamlScalar\nInput: key: value\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-purefn",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "\"key: value\"",
+    "min_tier": 1
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "yamlScalar",
+     "key"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-purefn-yaml-quoted-passthrough",
+  "prompt": "State the exact output of lib/dtd.mjs `yamlScalar` on the given input. Quote the output value exactly.\n\nFunction: yamlScalar\nInput: \"already quoted: yes\"\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-purefn",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "\"already quoted: yes\"",
+    "min_tier": 1
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "yamlScalar",
+     "quoted"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-purefn-yaml-hash",
+  "prompt": "State the exact output of lib/dtd.mjs `yamlScalar` on the given input. Quote the output value exactly.\n\nFunction: yamlScalar\nInput: see # note\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-purefn",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "\"see # note\"",
+    "min_tier": 1
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "yamlScalar",
+     "see"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

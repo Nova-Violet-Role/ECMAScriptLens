@@ -1,0 +1,64 @@
+[
+ {
+  "id": "ecma-check-07",
+  "prompt": "Read the following `rdc check` output and state its verdict. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <code>`.\n\nCheck output:\n{\"ok\":false,\"errors\":1,\"findings\":[{\"level\":\"error\",\"code\":\"C7\",\"msg\":\"NDATA channel probe_chan is declared but the body never fences it\"}],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":1,\"ndata\":1,\"laws\":1}}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-checklines",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: FAIL C7",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "C7",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "probe_chan",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "C7"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-check-12",
+  "prompt": "Read the following `rdc check` output and state its verdict. Your first line must be exactly `VERDICT: ok` or `VERDICT: FAIL <code>`.\n\nCheck output:\n{\"ok\":false,\"errors\":1,\"findings\":[{\"level\":\"error\",\"code\":\"C12\",\"msg\":\"a DOCTYPE comment contains \\\"--\\\", which XML forbids inside comments\"}],\"stats\":{\"name\":\"probe_root\",\"elements\":2,\"entities\":1,\"ndata\":0,\"laws\":1}}",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-checklines",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "VERDICT: FAIL C12",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "C12",
+    "min_tier": 2
+   },
+   {
+    "kind": "contains",
+    "value": "double hyphen",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "VERDICT",
+     "C12"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]

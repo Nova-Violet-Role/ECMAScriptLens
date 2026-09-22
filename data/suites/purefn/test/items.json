@@ -1,0 +1,49 @@
+[
+ {
+  "id": "ecma-purefn-flattencond",
+  "prompt": "State the exact output of lib/dtd.mjs `flattenConditionals` on the given input. Quote the output value exactly.\n\nFunction: flattenConditionals\nInput: <![ INCLUDE [ <!ELEMENT a (#PCDATA)> ]]>\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-purefn",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "<!ELEMENT a (#PCDATA)>",
+    "min_tier": 1
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "flattenConditionals",
+     "ELEMENT"
+    ],
+    "min_tier": 3
+   }
+  ]
+ },
+ {
+  "id": "ecma-purefn-frontmatter",
+  "prompt": "State the exact output of lib/dtd.mjs `frontmatterFindings` on the given input. Quote the output value exactly.\n\nFunction: frontmatterFindings\nInput: ---\ndesc: has: colon\n---\nbody\n",
+  "skill": "ecmascript",
+  "task_type": "ecmascript-purefn",
+  "assertions": [
+   {
+    "kind": "contains",
+    "value": "bare",
+    "min_tier": 1
+   },
+   {
+    "kind": "contains",
+    "value": "quote the value",
+    "min_tier": 2
+   },
+   {
+    "kind": "chain",
+    "parts": [
+     "frontmatterFindings",
+     "bare"
+    ],
+    "min_tier": 3
+   }
+  ]
+ }
+]
